@@ -172,17 +172,11 @@ int conta_caractere_recursivo(string str, char caractere) {
  * @return true se houver um caminho do início ao destino, ou false caso contrário.
  */
 bool labirinto_recursivo(char labirinto[10][10], int inicio_x, int inicio_y, int destino_x, int destino_y) {
-  if (inicio_x < 0 || inicio_x >= 10 || inicio_y < 0 || inicio_y >= 10) {
-    return false;
-  }
+  if (inicio_x < 0 || inicio_x >= 10 || inicio_y < 0 || inicio_y >= 10) return false;
 
-  if (inicio_x == destino_x && inicio_y == destino_y) {
-    return true;
-  }
+  if (inicio_x == destino_x && inicio_y == destino_y) return true;
 
-  if (labirinto[inicio_x][inicio_y] != ' ') {
-    return false;
-  }
+  if (labirinto[inicio_x][inicio_y] != ' ') return false;
 
   labirinto[inicio_x][inicio_y] = '*';
 
@@ -196,6 +190,7 @@ bool labirinto_recursivo(char labirinto[10][10], int inicio_x, int inicio_y, int
 
   return achou;
 }
+
 
 /**
  * Realiza o preenchimento de uma área conectada em uma matriz 10x10 de caracteres
